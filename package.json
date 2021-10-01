@@ -4,7 +4,15 @@
   "description": "��#\u0000 \u0000t\u0000i\u0000c\u0000k\u0000e\u0000t\u0000i\u0000n\u0000g\u0000-\u0000a\u0000u\u0000t\u0000h\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev src/index.ts",
+    "test": "jest --watchAll --no-cache"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,5 +37,13 @@
     "mongoose": "^6.0.8",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/supertest": "^2.0.11",
+    "jest": "^27.2.4",
+    "mongodb-memory-server": "^7.4.2",
+    "supertest": "^6.1.6",
+    "ts-jest": "^27.0.5"
   }
 }
